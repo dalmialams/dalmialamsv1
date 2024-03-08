@@ -1,0 +1,15 @@
+APP_ENV=production
+APP_DEBUG=true
+APP_KEY=SomeRandomString
+
+
+DB_CONNECTION=pgsql
+DB_HOST=192.168.17.66
+DB_DATABASE=landadmin
+DB_USERNAME=postgres
+DB_PASSWORD=landadmin
+DB_PREFIX=T_
+
+CACHE_DRIVER=file
+SESSION_DRIVER=file
+QUEUE_DRIVER=sync
