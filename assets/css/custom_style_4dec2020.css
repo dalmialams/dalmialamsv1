@@ -1,0 +1,75 @@
+.verticle_align_custom{
+	vertical-align:middle !important;
+}
+.dalmia_logo{
+	margin:5px 0 0 20px;
+}
+.dalmia_logo img{
+	width:242px;
+	height:55px;
+}
+.no_padding {
+    padding-right:0 !important;
+    padding-left:0 !important;
+}
+.no_margin {
+    margin-right:0 !important;
+    margin-left:0 !important;
+}
+.dalmia_login_logo{
+	margin:10px 10px 0 0;
+}
+.dalmia_login_logo img{
+	max-width:100%;
+}
+.login_text{
+text-align:left;
+padding:0 20px 0 0
+}
+.light_grey{
+	/* background:#f7f7fa; */
+	background: rgba(0, 0, 0, 0) linear-gradient(141deg, #f7f7f7 19%, #e8e8e8 51%, #f7f7fa 70%) repeat 0 0;
+}
+.forgot_password{
+	display:inline-block;
+	margin:10px 10px 0 0;
+}
+.box-shadow_log{
+	border: 2px solid #ccc;
+    box-shadow: 0 0 77px #888;
+}
+/*custom tab css starts*/
+.custom_tab_one > li{
+	padding:0px;	
+}
+.custom_tab_one > li > a{
+	padding:5px 20px;
+	border-radius:0;
+	background:#d2d2d2;
+	color: #555;
+}
+.custom_tab_one > li > a:hover{
+	padding:5px 20px;
+	border-radius:0;
+	background:#c7c7c7;
+}
+.custom_tab_one > li > a:active{
+	padding:5px 20px;
+	border-radius:0;
+	background:#0090d9;
+	color:#fff;
+}
+/*custom tab css ends*/
+.custom_form_one .form-group .form-label {
+}
+.table_scroll_bar{
+	overflow-x:auto;
+}
+
+
+
+
+
+
+
+
