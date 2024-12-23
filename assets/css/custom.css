@@ -1,0 +1,16 @@
+/* -----------------------------------------
+   Custom.css - put your own changes here 
+----------------------------------------- */
+#sidebar .nav > li {
+    border-bottom: 1px solid #1eafa2;
+    display: block;
+    position: relative;
+}
+@media screen and (max-width:1370px) {
+#footer {
+    border-top: 1px solid #e3e3e3;
+    bottom: -46px;
+}
+.select2-hidden-accessible{
+    display: none;
+}
