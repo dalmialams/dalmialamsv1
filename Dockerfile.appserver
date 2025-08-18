@@ -1,0 +1,41 @@
+FROM docker.io/composer:2 as composer
+
+# Use PHP 8.2 with Apache
+FROM php:8.2.27-apache
+
+# Install dependencies
+RUN apt-get update && apt-get install curl zip unzip git libpq-dev systemctl nano -y && docker-php-ext-install pdo pdo_pgsql && a2enmod proxy && a2enmod proxy_http && a2enmod rewrite && a2enmod headers && a2enmod ssl
+
+# Install Composer
+COPY --from=composer /usr/bin/composer /usr/bin/composer
+
+# Set working directory
+WORKDIR /var/www/html
+
+# Copy Laravel app from the sibling "project" directory
+COPY ./project/ .
+
+# Copy the Environment file
+COPY ./config/.env .env
+
+# Copy SSL 
+COPY ./config/ssl/dalmia.pem  /etc/apache2/ssl/dalmia.pem
+
+# Copy the Apache configuration file
+COPY ./config/gateway.conf /etc/apache2/sites-available/000-default.conf
+
+# # Create the /etc/apache2/ssl directory if it doesn't exist
+# RUN mkdir -p /etc/apache2/ssl
+
+# Install Laravel dependencies
+RUN composer install --ignore-platform-reqs --no-interaction --no-scripts --prefer-dist
+RUN chmod -R 777 /var/www/html
+
+#tmp tools
+RUN apt-get install telnet telnetd -y
+
+# Expose both HTTP and HTTPS ports
+EXPOSE 80 443
+
+# Start Apache
+CMD ["apache2-foreground"]
